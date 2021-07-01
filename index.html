@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>  
+    // Computer choice   
+        function computerPlay() {
+            let answer = Math.floor(Math.random() * 3);
+            if (answer == 0) {
+                return 'rock';
+            } else if (answer == 1) {
+                return 'paper';
+            } else {
+                return 'scissors';
+            }
+        }
+    // Player Choice
+        function playerChoice() {
+            let playerChoice = prompt("RPS?");
+            return playerChoice.toLocaleLowerCase();
+        }
+    //Score keeper
+    let playerScore = 0;
+    let computerScore = 0;
+
+    // Plays one round.
+        function rpsPlay(playerSelection,computerAnswer){
+           
+            if (playerSelection == 'rock' && computerAnswer == 'rock') {
+                return 'Tie!';
+            } else if (playerSelection == 'rock' && computerAnswer == 'paper') {
+               computerScore += 1;
+                return 'You lose! Paper beats rock.';
+            } else if (playerSelection == 'rock' && computerAnswer == 'scissors') {
+                playerScore += 1;
+                return 'You win! Rock beats scissors.';
+            } else if (playerSelection == 'paper' && computerAnswer == 'scissors') {
+                computerScore += 1;
+                return 'You lose! Scissors cuts paper.';
+            } else if (playerSelection == 'paper' && computerAnswer == 'rock') {
+                playerScore += 1;
+                return 'You win!, Paper beats rock.';
+            } else if (playerSelection == 'paper' && computerAnswer == 'paper') {
+                return 'Tie!';
+            } else if (playerSelection == 'scissors' && computerAnswer == 'paper') {
+                playerScore += 1;
+                return 'You win! Scissors cuts paper.';
+            } else if (playerSelection == 'scissors' && computerAnswer == 'Rock') {
+                computerScore += 1;
+                return 'You lose! Rock breaks scissors.';
+            } else if (playerSelection == 'scissors' && computerAnswer == 'scissors') {
+                return 'Tie!';
+             
+            }
+
+          
+        }
+
+     //Plays 5 rounds and shows score.   
+        function game() {
+            for (let i = 0; i < 5; i++) {
+                let computerChoice = computerPlay();
+                let playerPick = playerChoice();
+                console.log(rpsPlay(playerPick,computerChoice));
+                console.log('Player Score is ' + playerScore);
+                console.log('Computer Score is ' + computerScore);
+            }
+        }
+
+        
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
