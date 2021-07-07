@@ -21,6 +21,16 @@
     // Player Choice
         function playerChoice() {
             let playerChoice = prompt("RPS?");
+
+            while (playerChoice != 'rock' || playerChoice != 'paper' || playerChoice != 'scissors') {
+              
+                if (playerChoice == 'rock' || playerChoice == 'paper' || playerChoice == 'scissors') {
+                    break;
+                } else {
+                    playerChoice = prompt('That was not a correct input.');
+                }
+            }
+       
             return playerChoice.toLocaleLowerCase();
         }
     //Score keeper
@@ -69,6 +79,14 @@
                 console.log('Player Score is ' + playerScore);
                 console.log('Computer Score is ' + computerScore);
             }
+
+            if (playerScore > computerScore) {
+                    console.log('You Win!');
+                } else if(playerScore == computerScore) {
+                    console.log('Its a Tie!');
+                } else {
+                    console.log('Computer Wins!');
+                }
         }
 
         
