@@ -1,0 +1,42 @@
+#options {
+    display: flex;
+    justify-content: center;
+}
+
+#info{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;     
+}
+body{
+    background-color: rgb(129, 32, 255);
+
+}
+
+h1 {
+    justify-content: center;
+    display: flex;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+img:hover {
+    border: 3px solid white;
+    border-radius: 30px;
+}
+
+#info {
+    color: white;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.clickable {
+    cursor: pointer;
+}
